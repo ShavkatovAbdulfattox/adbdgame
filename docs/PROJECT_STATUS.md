@@ -8,6 +8,29 @@ the owner's PC (`docs/NEXT_STEPS.md`).
 
 ---
 
+## Web prototype (added 2026-10-14) — **playable and tested**
+Because Unreal needs a strong PC/Mac and the owner is on a MacBook Air, the M1 mission was
+also built as a **browser game** (`web/`, Three.js r160, no build step).
+- Same mission and systems: movement/sprint/crouch/jump/dodge, stamina, hiding zones,
+  noise, guard AI (Patrol → Suspicious → Combat → Search, shared alerts, A* path-finding),
+  sabre combo/block/parry/takedown, bow with draw power and gravity, tower archers,
+  objective → escape → end screen with rank, death/restart, pause + settings (saved),
+  synthesised wind and sound effects, keyboard/mouse, gamepad and **touch controls**.
+- **Verified** in headless Chromium (software WebGL): no console errors; 11 scripted
+  gameplay checks pass (`web/tests/gameplay.test.mjs`): detection in the open, hidden in
+  hay, takedown, sabre kill, parry stagger, bow kill, 51 m path around walls, dispatch
+  pickup → extraction success, death → failed, wall collision, entry through the breach.
+  Title, gameplay, aiming, end-screen and phone-layout screenshots checked visually.
+- Not yet verified: real-GPU frame rate, real touch devices, Safari specifically.
+- Hosting: `.github/workflows/pages.yml` deploys `web/` to GitHub Pages once Pages is set
+  to "GitHub Actions" in the repo settings.
+- Known web limitations: primitive characters with procedural animation; no navmesh-level
+  smoothing (guards may hug corners); infinite arrows.
+
+The Unreal project remains the long-term target (realistic visuals, horses, battles).
+
+---
+
 ## 1. Environment assessment (2026-10-14)
 
 The agent works on a **cloud Linux machine**, not on your PC.

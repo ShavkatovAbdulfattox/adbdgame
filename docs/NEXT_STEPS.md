@@ -2,8 +2,8 @@
 
 _Last updated: 2026-10-14. Written for a complete beginner. Follow the parts in order._
 
-The AI agent wrote the project files on a cloud machine without Unreal Engine or a GPU,
-so **the game has never been compiled or played yet**. Your PC is the first place it will
+The AI agent wrote the Unreal project files on a cloud machine without Unreal Engine or a GPU,
+so **the Unreal version has never been compiled or played yet** (the web version below has been tested). Your PC is the first place it will
 run. Expect possibly a few compile errors on the first try — that is normal; Part 9 explains
 how to report them so they can be fixed quickly.
 
@@ -11,6 +11,38 @@ Time needed: about 2–4 hours the first time (mostly downloads).
 
 ---
 
+
+## 🌐 Web version — the quickest way to play (no Unreal needed)
+
+A browser version of the same mission lives in `web/`. It runs on your MacBook Air,
+any PC, and phones. It looks simpler than the future Unreal version, but the gameplay is
+the same (stealth, guards, sabre, bow, mission). It has been tested in a headless
+browser: all scripted gameplay checks pass.
+
+### Play it on your Mac (2 minutes)
+1. In GitHub Desktop, **Fetch / Pull** so you have the `web` folder.
+2. Open **Terminal** and go to the project folder (yours is called `game`):
+   ```bash
+   cd ~/path/to/game        # the folder that contains Transoxiana.uproject and web/
+   cd web
+   python3 -m http.server 8000
+   ```
+3. Open **http://localhost:8000** in Chrome or Safari → **Play**.
+4. Click the game to capture the mouse. **P** pauses. Controls are listed on the title
+   screen and in `web/README.md`.
+5. When finished, press **Ctrl+C** in Terminal.
+
+### Put it online for free (playable on phones) — GitHub Pages
+1. Make sure the web version is on `main` (merge the pull request on GitHub).
+2. GitHub → your repo → **Settings → Pages** → under *Build and deployment*,
+   **Source: GitHub Actions**.
+3. GitHub → **Actions** tab → **Deploy web prototype to GitHub Pages** → **Run workflow**
+   (it also runs automatically whenever `web/` changes on `main`).
+4. After about a minute the link appears in the workflow run, usually
+   **https://shavkatovabdulfattox.github.io/adbdgame/** — open it on any device.
+   On a phone, hold it sideways; left side = move, right side = look.
+
+---
 
 ## 🍎 Using a Mac instead of Windows — read this first
 

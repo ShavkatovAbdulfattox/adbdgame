@@ -40,6 +40,22 @@ systems in C++ (plain text it can create and review). You — the designer — w
 use Blueprints and the editor for content: placing actors, tuning numbers, swapping
 meshes, adding animations. This is the same split most professional Unreal teams use.
 
+### 1.3 Interim web prototype (Three.js)
+The owner's current machine (MacBook Air) is too weak for comfortable Unreal development,
+so the first mission was also built in the browser (`web/`). This follows brief §12
+("implement the strongest playable alternative and document the trade-off"); it does
+**not** replace Unreal as the target engine.
+
+| | Web prototype | Unreal 5.8 project |
+|---|---|---|
+| Runs on | Any browser, incl. phones | Strong Windows PC / Apple Silicon Mac |
+| Visuals | Simple shapes, baked-feel lighting | Realistic (Lumen, Nanite) |
+| Tested | Yes (headless browser) | Not yet compiled |
+| Purpose | Prove the gameplay now; share a link | Final game |
+
+Design numbers live in `web/src/config.js` and mirror the C++ defaults, so tuning found in
+the web version can be copied to Unreal.
+
 ---
 
 ## 2. What you need on your PC
