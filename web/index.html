@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Shadows of Transoxiana — The Sealed Dispatch</title>
+  <meta name="description" content="Web prototype of a historical stealth-action game set in Timurid Central Asia, 1387.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Touch input layer (phones/tablets) -->
+  <div id="touch-zone"></div>
+  <div id="stick"><div id="stick-knob"></div></div>
+  <div id="touch-buttons">
+    <button data-action="attack" class="tb big">ATK</button>
+    <button data-action="alt" class="tb big">BLK<br>AIM</button>
+    <button data-action="jump" class="tb">JUMP</button>
+    <button data-action="crouch" class="tb">CROUCH</button>
+    <button data-action="dodge" class="tb">DODGE</button>
+    <button data-action="interact" class="tb">E</button>
+    <button data-action="switch" class="tb">SWAP</button>
+  </div>
+  <button id="btn-pause-touch" class="tb-pause">II</button>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="objective"><div class="kicker">THE SEALED DISPATCH</div><div id="objective-text"></div></div>
+    <div id="bars">
+      <div id="stance"></div>
+      <div class="bar hp"><div id="hp-fill"></div></div>
+      <div class="bar st"><div id="st-fill"></div></div>
+      <div id="weapon"></div>
+    </div>
+    <div id="marker"><div class="diamond"></div><div id="marker-dist"></div></div>
+    <div id="indicators"></div>
+    <div id="crosshair"><div class="cross"></div><div class="draw"><div id="draw-fill"></div></div></div>
+    <div id="prompt"></div>
+    <div id="toast"></div>
+    <div id="damage"></div>
+  </div>
+
+  <div id="briefing" class="hidden">
+    <div class="kicker">Autumn 1387 — a rabat on the road from Bukhara to Samarkand</div>
+    <p>“The raiders holding this rabat carry a sealed letter naming who in Bukhara will open a gate to them.
+    Take it before dawn. Kill only if you must.”</p>
+    <p class="small">Crouch in hay and shade to hide. Shoot an arrow near a guard to distract him. Sneak up behind a guard and press E for a silent takedown.</p>
+  </div>
+
+  <!-- Title screen -->
+  <div id="start" class="screen">
+    <h1>SHADOWS OF TRANSOXIANA</h1>
+    <div class="sub">The Sealed Dispatch — web prototype</div>
+    <button id="btn-play" class="primary">Play</button>
+    <div id="start-controls" class="controls">
+      WASD move · Mouse look · Shift sprint · C crouch · Space jump · Alt/V dodge<br>
+      Left mouse attack / shoot · Right mouse block / aim · Q switch sabre ↔ bow · E take / takedown · P or Esc pause
+    </div>
+    <div class="note">Historical setting (Timurid Central Asia). The people and this mission are fictional.</div>
+  </div>
+
+  <!-- Pause + settings -->
+  <div id="menu" class="screen hidden">
+    <div id="menu-pause">
+      <h2>PAUSED</h2>
+      <button id="btn-resume" class="primary">Resume</button>
+      <button id="btn-settings">Settings</button>
+      <button id="btn-restart">Restart mission</button>
+    </div>
+    <div id="menu-settings" class="hidden">
+      <h2>SETTINGS</h2>
+      <label>Look sensitivity <span id="sens-val"></span><input id="set-sens" type="range" min="0.2" max="3" step="0.1"></label>
+      <label class="check"><input id="set-invert" type="checkbox"> Invert look up/down</label>
+      <label>Volume <span id="vol-val"></span><input id="set-volume" type="range" min="0" max="1" step="0.05"></label>
+      <label>Graphics quality
+        <select id="set-quality">
+          <option value="0">Low (fastest)</option>
+          <option value="1">Medium</option>
+          <option value="2">High</option>
+          <option value="3">Epic</option>
+        </select>
+      </label>
+      <button id="btn-back">Back</button>
+    </div>
+  </div>
+
+  <!-- Mission end -->
+  <div id="end" class="screen hidden">
+    <h2 id="end-title"></h2>
+    <p id="end-story"></p>
+    <p id="end-rank"></p>
+    <p id="end-stats"></p>
+    <button id="btn-again" class="primary">Play again</button>
+  </div>
+
+  <noscript>This game needs JavaScript and WebGL.</noscript>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
