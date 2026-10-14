@@ -17,6 +17,7 @@ public class Transoxiana : ModuleRules
 			"InputCore",
 			"EnhancedInput",
 			"AIModule",
+			"GameplayTasks",
 			"NavigationSystem",
 			"AudioMixer",
 			"UMG",

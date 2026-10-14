@@ -29,7 +29,7 @@ int32 UWindSynthComponent::OnGenerateAudio(float* OutAudio, int32 NumSamples)
 		}
 		GustLevel += (GustTarget - GustLevel) * Dt * 0.6f;
 		GustPhase += Dt * 0.37f;
-		const float Flutter = 0.85f + 0.15f * FMath::Sin(GustPhase * 2.f * PI * 3.1f);
+		const float Flutter = 0.85f + 0.15f * FMath::Sin(GustPhase * 2.f * UE_PI * 3.1f);
 
 		// White noise -> two one-pole low-pass filters. Stronger gusts open the filter,
 		// which makes the wind "whistle" brighter.

@@ -14,6 +14,7 @@
 #include "Engine/World.h"
 #include "EngineUtils.h"
 #include "GameFramework/PlayerStart.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "Mission/DispatchPickup.h"
 #include "Mission/ExtractionZone.h"
 #include "Transoxiana.h"

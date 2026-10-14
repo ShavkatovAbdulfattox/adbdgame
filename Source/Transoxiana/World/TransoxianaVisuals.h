@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 
+class UObject;
 class UStaticMesh;
 class UMaterialInstanceDynamic;
 class UStaticMeshComponent;
