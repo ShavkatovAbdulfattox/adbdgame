@@ -66,6 +66,16 @@ Notes for a beginner:
   + derived data cache ~20–60 GB as it grows.
 - Laptops: fine if they have a dedicated RTX/Radeon GPU and stay plugged in.
 
+### 2.1b Mac (Apple Silicon)
+UE 5.8 supports macOS with Apple Silicon (Epic's requirements: macOS Sonoma 14.5 minimum,
+Sequoia recommended; Xcode 26.0 minimum, 26.1.1 recommended, 26.4 incompatible).
+Lumen software ray tracing works on M1+; **Nanite and Virtual Shadow Maps need M2+**
+(beta on Mac). Recommended: M2 Pro / M3 / M4 or newer with **32 GB** unified memory;
+16 GB is the practical minimum; Intel Macs are not recommended. On Mac, **Xcode replaces
+Visual Studio**. Source: [Epic — macOS development requirements](https://dev.epicgames.com/documentation/unreal-engine/macos-development-requirements-for-unreal-engine).
+Note: the final game is aimed at Windows PC players; developing on a Mac is fine, but test
+Windows builds before release.
+
 ### 2.2 Software (all free)
 
 | Software | Why | Version |

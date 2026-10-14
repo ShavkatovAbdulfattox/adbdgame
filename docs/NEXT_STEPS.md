@@ -11,6 +11,71 @@ Time needed: about 2–4 hours the first time (mostly downloads).
 
 ---
 
+
+## 🍎 Using a Mac instead of Windows — read this first
+
+Unreal Engine 5.8 runs on Macs with **Apple Silicon (M1, M2, M3, M4 …)**. Parts 0–4
+below are written for Windows; on a Mac do **M0–M4 here instead**, then continue with
+Part 5 (it's the same on both).
+
+### M0 — Check your Mac
+Apple menu  → **About This Mac**.
+| | Works | Recommended |
+|---|---|---|
+| Chip | Apple **M1** (Lumen lighting works) | **M2 Pro / M3 / M4 or newer** (Nanite + Virtual Shadow Maps need **M2+**) |
+| Memory | 16 GB | 32 GB or more |
+| macOS | Sonoma 14.5 | latest Sequoia 15 / macOS 26 |
+| Free disk | 150 GB | 250 GB+ |
+
+**Intel Macs:** not recommended — very slow, and Nanite is not supported. A Mac with
+8 GB memory will struggle badly.
+
+### M1 — Get the project
+1. Install **GitHub Desktop for Mac** (<https://desktop.github.com/>), sign in.
+2. **File → Clone Repository** → `ShavkatovAbdulfattox/adbdgame` → local path
+   `~/Dev/adbdgame` (no spaces) → Clone. Accept Git LFS if asked.
+3. **Current Branch** → `claude/game-engine-research-i8iyyq`.
+
+### M2 — Install Xcode (replaces Visual Studio)
+1. Install **Xcode 26.1.x** from the Mac App Store or <https://developer.apple.com/download/>.
+   Epic lists Xcode **26.0 minimum, 26.1.1 recommended** for UE 5.8 and warns that
+   **26.4 is not compatible** — if the App Store gives you a newer version and the build
+   fails, install 26.1.1 from developer.apple.com (“More downloads”).
+2. Open Xcode once and accept the licence; let it install extra components.
+3. Open **Terminal** and run: `xcode-select --install` (installs command-line tools; if it
+   says they're already installed, that's fine).
+
+### M3 — Install Unreal Engine 5.8
+Same as Part 3: Epic Games Launcher (Mac version) → Unreal Engine → Library → **+** →
+**5.8** → Install (untick iOS/Android/Linux in Options). It installs to
+`/Users/Shared/Epic Games/UE_5.8`.
+
+### M4 — Build and open the project
+The most reliable way on a Mac is to build once from Terminal (you'll see any errors
+clearly). Copy-paste these two lines into **Terminal**:
+
+```bash
+cd ~/Dev/adbdgame
+"/Users/Shared/Epic Games/UE_5.8/Engine/Build/BatchFiles/Mac/Build.sh" TransoxianaEditor Mac Development -project="$PWD/Transoxiana.uproject"
+```
+
+- It ends with **`Result: Succeeded`** → double-click `Transoxiana.uproject` (or open it
+  from the Epic Launcher → Library → My Projects → Browse). First launch compiles shaders
+  for a while.
+- It ends with errors → copy everything from the first `error:` line and send it to the
+  agent (Part 9).
+
+### Mac controls and tips
+- **Use a real mouse.** On a trackpad, right-click = two-finger click, and holding it
+  (block/aim) is awkward.
+- **Option (⌥)** is the "Alt" key (dodge). **Control** or **C** = crouch.
+- The "**`**" console key is the key left of **1** (on some layouts **§** or **±**).
+- Screenshots: **⌘ + Shift + 4**.
+- If the game is slow: pause (**P**) → Settings → Graphics quality **Low**, and keep the
+  Mac plugged in.
+
+---
+
 ## Part 0 — Check your PC (5 min)
 
 1. Press **Win + R**, type `dxdiag`, press Enter.
