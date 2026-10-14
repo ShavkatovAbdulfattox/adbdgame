@@ -36,7 +36,7 @@ Nothing is reported as working until it has been compiled and played in Unreal.
 | Engine recommendation (UE 5.8), hardware, architecture | `docs/TECHNICAL_ARCHITECTURE.md` | — |
 | Beginner install & test guide | `docs/NEXT_STEPS.md` | — |
 | UE 5.8 C++ project skeleton (uproject, Config, targets, Git LFS, .gitignore) | repo root | **Not opened in Unreal yet** |
-| M1 gameplay code (~2,500 lines C++) | `Source/Transoxiana/` | **Not compiled.** Statically reviewed twice (author + independent API review) |
+| M1 gameplay code (~4,400 lines C++) | `Source/Transoxiana/` | **Not compiled.** Statically reviewed twice (author + independent API review) |
 
 ### M1 features implemented (all untested)
 - Third-person player: walk/run, sprint + stamina, crouch-sneak, jump, dodge.
