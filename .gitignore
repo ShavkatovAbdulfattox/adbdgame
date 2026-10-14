@@ -29,3 +29,15 @@ Plugins/*/Intermediate/
 # OS
 Thumbs.db
 .DS_Store
+
+# Epic/Fab/Mixamo content may NOT be redistributed in a PUBLIC repository.
+# The "Third Person" feature pack installs into these folders; keep them local.
+# (If you make the GitHub repo private, you may remove these lines.)
+Content/Characters/Mannequins/
+Content/ThirdPerson/
+Content/LevelPrototyping/
+Content/Input/
+Content/Fab/
+Content/Megascans/
+Content/MSPresets/
+Content/ThirdParty_Licensed/
